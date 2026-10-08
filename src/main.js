@@ -1,6 +1,7 @@
 import Lenis from 'lenis';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { router } from './router.js';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -262,7 +263,10 @@ function initPreloader() {
       setTimeout(() => {
         if (preloader) preloader.classList.add('fade-out');
         document.body.classList.remove('loading');
-        triggerHeroCinematicReveal();
+        const p = window.location.pathname;
+        if (p === '/' || p === '' || p === '/index.html') {
+          triggerHeroCinematicReveal();
+        }
       }, 350);
     } else {
       if (progressBar) progressBar.style.width = `${progress}%`;
@@ -403,7 +407,12 @@ function initFullscreenMenu() {
     link.addEventListener('click', (e) => {
       closeMenu();
       const href = link.getAttribute('href');
-      if (href && href.startsWith('#')) {
+      if (!href) return;
+
+      if (href.startsWith('/products') || href === '/' || href.startsWith('/#')) {
+        e.preventDefault();
+        router.navigate(href);
+      } else if (href.startsWith('#')) {
         e.preventDefault();
         const target = document.querySelector(href);
         if (target) {
@@ -877,4 +886,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initLiveLocalTime();
   initBackToTop();
   initSmoothAnchors();
+  router.init(lenis);
 });

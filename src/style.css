@@ -4,6 +4,8 @@
    Amreli, Gujarat
    ========================================================================== */
 
+@import './catalogue.css';
+
 /* --- ROOT DESIGN TOKENS --- */
 :root {
   /* Architectural Palette */

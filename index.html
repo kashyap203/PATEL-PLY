@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     
     <link rel="stylesheet" href="/src/style.css" />
+    <link rel="stylesheet" href="/src/catalogue.css" />
   </head>
   <body class="loading">
     <!-- Page Preloader (Minimalist Architectural Reveal) -->
@@ -34,18 +35,19 @@
     <!-- Sticky Architectural Navigation -->
     <header class="site-header" id="siteHeader">
       <div class="header-container">
-        <a href="#hero" class="brand-logo" aria-label="Patel Ply Homepage">
+        <a href="/" class="brand-logo" aria-label="Patel Ply Homepage">
           <span class="brand-title">PATEL PLY</span>
           <span class="brand-subtitle">&amp; HARDWARE SANITARY</span>
         </a>
 
         <nav class="desktop-nav" aria-label="Main Navigation">
           <ul class="nav-list">
-            <li><a href="#products" class="nav-link" data-cursor="EXPLORE">PRODUCTS</a></li>
-            <li><a href="#about" class="nav-link">ABOUT</a></li>
-            <li><a href="#showroom" class="nav-link" data-cursor="VIEW">SHOWROOM</a></li>
-            <li><a href="#brands" class="nav-link">BRANDS</a></li>
-            <li><a href="#location" class="nav-link">CONTACT</a></li>
+            <li><a href="/" class="nav-link" data-nav="home">HOME</a></li>
+            <li><a href="/products" class="nav-link" data-nav="products" data-cursor="EXPLORE">PRODUCTS</a></li>
+            <li><a href="/#about" class="nav-link" data-nav="about">ABOUT</a></li>
+            <li><a href="/#showroom" class="nav-link" data-nav="showroom" data-cursor="VIEW">SHOWROOM</a></li>
+            <li><a href="/#brands" class="nav-link" data-nav="brands">BRANDS</a></li>
+            <li><a href="/#location" class="nav-link" data-nav="contact">CONTACT</a></li>
           </ul>
         </nav>
 
@@ -57,6 +59,13 @@
              aria-label="Direct WhatsApp Inquiry">
             <span class="btn-text">WHATSAPP</span>
             <span class="pulse-indicator"></span>
+          </a>
+          <a href="https://maps.google.com/?q=Patel+Ply+%26+Hardware+Sanitary+Manekpara+Amreli" 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="btn-nav-directions" 
+             aria-label="Get Directions to Manekpara Showroom">
+            <span class="btn-text">GET DIRECTIONS</span>
           </a>
           <button class="menu-toggle-btn" id="menuToggle" aria-label="Toggle Fullscreen Menu" aria-expanded="false">
             <span class="menu-label">MENU</span>
@@ -81,14 +90,15 @@
           <div class="menu-nav-column">
             <span class="column-eyebrow">NAVIGATION</span>
             <ul class="fullscreen-nav-list">
-              <li><a href="#hero" class="fullscreen-nav-link" data-num="00">Overview</a></li>
-              <li><a href="#products" class="fullscreen-nav-link" data-num="01">Material World</a></li>
-              <li><a href="#showcase" class="fullscreen-nav-link" data-num="02">Architectural Gallery</a></li>
-              <li><a href="#statement" class="fullscreen-nav-link" data-num="03">Philosophy</a></li>
-              <li><a href="#showroom" class="fullscreen-nav-link" data-num="04">The Showroom</a></li>
-              <li><a href="#about" class="fullscreen-nav-link" data-num="05">18+ Years Heritage</a></li>
-              <li><a href="#collage" class="fullscreen-nav-link" data-num="06">Visual Monograph</a></li>
-              <li><a href="#location" class="fullscreen-nav-link" data-num="07">Visit Manekpara</a></li>
+              <li><a href="/" class="fullscreen-nav-link" data-num="00">Home Overview</a></li>
+              <li><a href="/products" class="fullscreen-nav-link" data-num="01">Products Catalogue</a></li>
+              <li><a href="/products/ceramic-water-taps" class="fullscreen-nav-link" data-num="02">&bull; Ceramic Water Taps</a></li>
+              <li><a href="/products/berger-colors" class="fullscreen-nav-link" data-num="03">&bull; Berger Colors</a></li>
+              <li><a href="/products/kitchen-hardware" class="fullscreen-nav-link" data-num="04">&bull; Kitchen Hardware</a></li>
+              <li><a href="/products/hardware" class="fullscreen-nav-link" data-num="05">&bull; Hardware</a></li>
+              <li><a href="/#showroom" class="fullscreen-nav-link" data-num="06">The Showroom</a></li>
+              <li><a href="/#about" class="fullscreen-nav-link" data-num="07">18+ Years Heritage</a></li>
+              <li><a href="/#location" class="fullscreen-nav-link" data-num="08">Visit Manekpara</a></li>
             </ul>
           </div>
           <div class="menu-info-column">
@@ -174,8 +184,8 @@
         </div>
       </section>
 
-      <!-- SECTION 01: PRODUCT WORLD -->
-      <section class="section product-world-section" id="products">
+      <!-- SECTION 01: MATERIAL WORLD -->
+      <section class="section product-world-section" id="material-world">
         <div class="section-container">
           <div class="editorial-header">
             <div class="header-left">
@@ -191,6 +201,7 @@
                 From foundation grade marine timber to silent micro-mechanical hardware and sculptural bath suites, our catalogue is curated for permanence, tactile precision, and architectural cohesion.
               </p>
               <div class="slider-controls">
+                <a href="/products" class="btn-editorial-sm" data-cursor="EXPLORE" style="margin-right: 14px; display: inline-flex; align-items: center; padding: 10px 20px; font-size: 0.72rem; letter-spacing: 0.16em; border: 1px solid var(--border-medium); text-transform: uppercase;">VIEW CATALOGUE &rarr;</a>
                 <button class="slider-btn prev-btn" id="prodPrevBtn" aria-label="Previous Category">&larr;</button>
                 <button class="slider-btn next-btn" id="prodNextBtn" aria-label="Next Category">&rarr;</button>
               </div>
@@ -1067,6 +1078,9 @@
       </section>
     </main>
 
+    <!-- DEDICATED ARCHITECTURAL PRODUCT CATALOGUE EXPERIENCE -->
+    <main id="catalogueApp" class="catalogue-app" style="display: none;"></main>
+
     <!-- OVERSIZED EDITORIAL FOOTER -->
     <footer class="site-footer">
       <div class="footer-container">
@@ -1091,26 +1105,25 @@
           </div>
 
           <div class="footer-col">
-            <span class="col-title">CATEGORIES</span>
+            <span class="col-title">PRODUCT ARCHIVE</span>
             <ul class="footer-nav">
-              <li><a href="#products" class="footer-link">Calibrated Marine Plywood</a></li>
-              <li><a href="#products" class="footer-link">Architectural Door Hardware</a></li>
-              <li><a href="#products" class="footer-link">Monolith Sanitaryware</a></li>
-              <li><a href="#products" class="footer-link">1200&times;2400 Porcelain Slabs</a></li>
-              <li><a href="#products" class="footer-link">PVD CP Bath Fittings</a></li>
-              <li><a href="#products" class="footer-link">Natural Decorative Veneers</a></li>
+              <li><a href="/products/ceramic-water-taps" class="footer-link">Ceramic Water Taps</a></li>
+              <li><a href="/products/berger-colors" class="footer-link">Berger Colors &amp; Textures</a></li>
+              <li><a href="/products/kitchen-hardware" class="footer-link">Kitchen Hardware Systems</a></li>
+              <li><a href="/products/hardware" class="footer-link">Architectural Door Hardware</a></li>
+              <li><a href="/products" class="footer-link">All Product Categories &rarr;</a></li>
             </ul>
           </div>
 
           <div class="footer-col">
             <span class="col-title">NAVIGATION</span>
             <ul class="footer-nav">
-              <li><a href="#hero" class="footer-link">Overview</a></li>
-              <li><a href="#about" class="footer-link">18+ Years Heritage</a></li>
-              <li><a href="#showroom" class="footer-link">The Manekpara Showroom</a></li>
-              <li><a href="#brands" class="footer-link">Brand Partners</a></li>
-              <li><a href="#reviews" class="footer-link">Customer Experience</a></li>
-              <li><a href="#location" class="footer-link">Visit &amp; Directions</a></li>
+              <li><a href="/" class="footer-link">Home Overview</a></li>
+              <li><a href="/products" class="footer-link">Products Catalogue</a></li>
+              <li><a href="/#about" class="footer-link">18+ Years Heritage</a></li>
+              <li><a href="/#showroom" class="footer-link">The Manekpara Showroom</a></li>
+              <li><a href="/#brands" class="footer-link">Brand Partners</a></li>
+              <li><a href="/#location" class="footer-link">Visit &amp; Directions</a></li>
             </ul>
           </div>
 
@@ -1217,6 +1230,34 @@
           <!-- Thumbnails dynamically rendered -->
         </div>
       </div>
+    </div>
+
+    <!-- FLOATING MOBILE BOTTOM ACTION BAR -->
+    <div class="floating-mobile-bar" id="floatingMobileBar">
+      <a href="tel:08460418938" class="floating-action-btn" aria-label="Call Patel Ply">
+        <span class="btn-icon">&#x260E;</span>
+        <span>CALL</span>
+      </a>
+      <a href="https://wa.me/918460418938?text=Hello%20Patel%20Ply%20Amreli%2C%20I%20would%20like%20to%20inquire%20about%20materials." 
+         target="_blank" 
+         rel="noopener noreferrer" 
+         class="floating-action-btn primary" 
+         aria-label="WhatsApp Direct Desk">
+        <span class="btn-icon">&#x1F4AC;</span>
+        <span>WHATSAPP</span>
+      </a>
+      <a href="/products" class="floating-action-btn" id="floatingProductsBtn" aria-label="Browse Product Archive">
+        <span class="btn-icon">&#x25A6;</span>
+        <span>PRODUCTS</span>
+      </a>
+      <a href="https://maps.google.com/?q=Patel+Ply+%26+Hardware+Sanitary+Manekpara+Amreli" 
+         target="_blank" 
+         rel="noopener noreferrer" 
+         class="floating-action-btn" 
+         aria-label="Directions to Manekpara Showroom">
+        <span class="btn-icon">&#x25CE;</span>
+        <span>DIRECTIONS</span>
+      </a>
     </div>
 
     <script type="module" src="/src/main.js"></script>
